@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Jimmy's Diner</title>
+  </head>
+  <body>
+    <div class="app">
+      <article>
+        <div class="header-section">
+          <p id="title" class="title">Jimmy's Dinner</p>
+          <p id="subtitle">The best burgers and pizzas in town</p>
+        </div>
+        <main>
+          <div class="product-section">
+            <ul class="product-container" id="product-container"></ul>
+          </div>
+          <footer id="footer-section">
+            <div class="cart hidden" id="cart">
+              <h3 class="cart-title">Your order</h3>
+              <ul class="cart-item__container" id="cart-item__container"></ul>
+              <p id="total" class="total">
+                Total price:
+                <span class="total-price" id="total-price">$10</span>
+              </p>
+              <button class="btn-complete-order" id="btn-order">
+                Complete order
+              </button>
+            </div>
+            <p class="success-notification not--show" id="notification"></p>
+          </footer>
+          <form class="not--show" id="payment-form">
+            <h3 class="form-title" id="form-title">Enter card details</h3>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              autofocus
+              id="form-name"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Enter card number"
+              id="card-number"
+              name="card-number"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Enter CVV"
+              id="cvv"
+              name="cvv"
+              required
+            />
+            <button class="btn-pay" type="submit" id="btn-pay">Pay</button>
+          </form>
+          <div class="overlay not--show" id="overlay"></div>
+        </main>
+      </article>
+    </div>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
