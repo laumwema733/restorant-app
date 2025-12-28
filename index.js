@@ -21,7 +21,15 @@ document.addEventListener("click", function (e) {
   }
 
   if (e.target.id === "btn-pay") {
-    handlePayment(e.target.id);
+    const name = document.getElementById("form-name");
+    const cardNumber = document.getElementById("card-number");
+    const cardCVV = document.getElementById("cvv");
+
+    if ((name.value, cardCVV.value, cardNumber.value)) {
+      handlePayment(e.target.id);
+    } else {
+      alert("Enter you card details!!");
+    }
   }
 });
 
@@ -59,18 +67,24 @@ function handleRemoveClick(item) {
 }
 
 function handlePayment(id) {
-  const newObject = {
-    name: document.getElementById("form-name").value,
-  };
+  const name = document.getElementById("form-name");
+  const cardNumber = document.getElementById("card-number");
+  const cardCVV = document.getElementById("cvv");
+
+  if (!name.value && !cardNumber && cardCVV) return;
+
+  console.log(name.value, cardNumber.value, cardCVV.value);
   document.querySelector(".overlay").classList.add("not--show");
   document.querySelector("#payment-form").classList.add("not--show");
   document.getElementById("cart").classList.add("hidden");
 
   document.getElementById(
     "notification"
-  ).textContent = `Thanks, ${newObject.name}! Your order is on its way!`;
+  ).textContent = `Thanks, ${name.value}! Your order is on its way!`;
   document.getElementById("notification").classList.remove("not--show");
-  render();
+  name.value = "";
+  cardNumber.value = "";
+  cardCVV.value = "";
 }
 // create html element
 
